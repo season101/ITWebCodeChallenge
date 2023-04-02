@@ -1,12 +1,24 @@
-<div *ngFor="let item of items">
-  <h2>{{ item.title }}</h2>
-  <p>{{ item.description }}</p>
-  <a href="">{{item.link}}</a>
-  <br>
-  <img [src]="item.imageUrl" alt="{{ item.imageTitle }}" style="height: 10rem;">
-  <p>{{item.author}}</p>
-  <p>{{item.pubDate}}</p>
-  <div *ngFor="let cat of item.category">
-    <p>{{cat}}</p>
-  </div>
+<div class="m-10 p-10">
+  
+
+
+  <p-card class="mx-5 p-20" header="ULM RSS FEED">
+    <div *ngFor="let item of items">
+
+        
+      <p-card class="m-2" header="{{item.title}}" subheader="{{item.author}}" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="Card" [src]="item.imageUrl" />
+        </ng-template>
+        <p>
+          {{ item.description }}
+        </p>
+        <ng-template pTemplate="footer">
+            <p-button label="Save" icon="pi pi-check"></p-button>
+            <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+        </ng-template>
+      </p-card>
+    </div>
+  </p-card>
+  
 </div>
