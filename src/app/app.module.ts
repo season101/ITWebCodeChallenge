@@ -9,7 +9,7 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ChipModule } from 'primeng/chip';
 import { ScrollTopModule } from 'primeng/scrolltop';
-
+import { DataViewModule} from 'primeng/dataview';
 
 
 @NgModule({
@@ -23,7 +23,8 @@ import { ScrollTopModule } from 'primeng/scrolltop';
     CardModule,
     ButtonModule,
     ChipModule,
-    ScrollTopModule
+    ScrollTopModule,
+    DataViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
