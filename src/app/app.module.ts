@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { ChipModule } from 'primeng/chip';
+import { ScrollTopModule } from 'primeng/scrolltop';
+
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,9 @@ import { ButtonModule } from 'primeng/button';
     AppRoutingModule,
     HttpClientModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    ChipModule,
+    ScrollTopModule
   ],
   providers: [],
   bootstrap: [AppComponent]

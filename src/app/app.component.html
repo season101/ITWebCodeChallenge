@@ -1,24 +1,19 @@
-<div class="m-10 p-10">
-  
-
-
-  <p-card class="mx-5 p-20" header="ULM RSS FEED">
-    <div *ngFor="let item of items">
-
-        
-      <p-card class="m-2" header="{{item.title}}" subheader="{{item.author}}" [style]="{ width: '360px' }">
-        <ng-template pTemplate="header">
-            <img alt="Card" [src]="item.imageUrl" />
-        </ng-template>
-        <p>
-          {{ item.description }}
-        </p>
-        <ng-template pTemplate="footer">
-            <p-button label="Save" icon="pi pi-check"></p-button>
-            <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
-        </ng-template>
-      </p-card>
-    </div>
-  </p-card>
-  
+<div class="flex flex-row flex-wrap card-container" >
+  <div class="card" *ngFor="let item of items">
+    <p-card class="card-style" header="{{item.title}}" subheader="{{item.author}}" >
+      <ng-template pTemplate="header">
+          <img alt="Card" [src]="item.imageUrl" />
+      </ng-template>
+      <p>
+        {{ item.description }}
+      </p>
+      <span *ngFor="let cat of item.category">
+        <p-chip class="mx-1" label="{{cat}}"></p-chip>
+      </span>
+      <ng-template pTemplate="footer">
+          <p-button label="Save" icon="pi pi-check"></p-button>
+          <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+      </ng-template>
+    </p-card>
+  </div>
 </div>
